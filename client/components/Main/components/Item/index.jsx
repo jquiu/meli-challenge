@@ -19,7 +19,7 @@ const Item = ({ item }) => {
       </Link>
       <ItemInfo>
         <ItemPrice priceInfo={item.price} showDecimals={false} />
-        {item.free_shipping ? <img src="/ic_shipping.png" /> : null}
+        {item.free_shipping ? <img src="/ic_shipping.png" alt="Free shipping" width="18" height="18"/>  : null}
         <br />
         <Link href={`/items/${item.id}`}>
           <ItemTitle>{item.title}</ItemTitle>

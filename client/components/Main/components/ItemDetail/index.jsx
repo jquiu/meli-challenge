@@ -30,7 +30,7 @@ const ItemDetail = ({ id, data }) => {
             <ItemDetailPrice>
               <ItemPrice priceInfo={item.price} showDecimals={false} />
             </ItemDetailPrice>
-            <ItemDetailBtn>Comprar</ItemDetailBtn>
+            <ItemDetailBtn aria-label="Comprar">Comprar</ItemDetailBtn>
           </div>
         </ItemDetailContainerInfo>
         <ItemDetailContainerDescription>

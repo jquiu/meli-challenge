@@ -15,11 +15,11 @@ const SearchBar = () => {
       setSearch(value);
     }
   };
-  // useEffect(() => {
-  //   const urlParams = new URLSearchParams(window.location.search);
-  //   const myParam = urlParams.get("search");
-  //   setSearch(myParam);
-  // });
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get("search");
+    setSearch(myParam);
+  }, []);
 
   return (
     <SearchFrom>
@@ -33,11 +33,14 @@ const SearchBar = () => {
         autoCapitalize="none"
         autoComplete="off"
         autoCorrect="off"
+        id="search"
+        name="search"
+        arial-label="search"
       />
 
       <Link href={`/items?search=${search}`}>
         <SearchLink>
-          <img src="/ic_Search@2x.png" />
+          <img src="/ic_Search@2x.png" alt="search button" />
         </SearchLink>
       </Link>
     </SearchFrom>

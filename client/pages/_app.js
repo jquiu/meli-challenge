@@ -7,10 +7,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Mercado Libre Colombia</title>
         <meta charset="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.4"/>
         <meta
           name="description"
           content="La comunidad de compra y venta online más grande de América Latina."

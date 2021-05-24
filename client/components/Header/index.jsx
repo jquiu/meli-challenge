@@ -8,7 +8,12 @@ const Header = () => {
     <HeaderContainer>
       <Wrapper>
         <Link href={`/`}>
-          <img src="/logo__small@2x.png" />
+          <img
+            src={"/logo__small@2x.png"}
+            alt="logo"
+            width={180}
+            height={180}
+          />
         </Link>
         <SearchBar />
       </Wrapper>

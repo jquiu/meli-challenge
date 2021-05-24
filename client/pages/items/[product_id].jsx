@@ -14,41 +14,21 @@ function ProductItem({ product, data }) {
   const setAlternante = (platform) => {
     const link =
       platform === "android"
-        ? `android-app://com.mercadolibre/meli/item?id=MCO565045738`
-        : `ios-app://463624852/meli/item?id=MCO565045738`;
+        ? `android-app://com.mercadolibre/meli/item?id=${item.id}`
+        : `ios-app://463624852/meli/item?id=${item.id}`;
     return link;
   };
   return (
     <div>
       <Head>
         <title>{item.title} | MercadoLibre.com</title>
-        <meta
-          name="description"
-          content={item.description}
-          data-head-react="true"
-        />
-        <meta
-          property="og:description"
-          content={item.description}
-          data-head-react="true"
-        />
-        <meta property="og:title" content={item.title} data-head-react="true" />
-        <meta
-          property="og:image"
-          content={item.picture}
-          data-head-react="true"
-        />
-        <link rel="canonical" href={setCanonical()} data-head-react="true" />
-        <link
-          rel="alternate"
-          href={setAlternante("ios")}
-          data-head-react="true"
-        />
-        <link
-          rel="alternate"
-          href={setAlternante("android")}
-          data-head-react="true"
-        />
+        <meta name="description" content={item.description} />
+        <meta property="og:description" content={item.description} />
+        <meta property="og:title" content={item.title} />
+        <meta property="og:image" content={item.picture} />
+        <link rel="canonical" href={setCanonical()} />
+        <link rel="alternate" href={setAlternante("ios")} />
+        <link rel="alternate" href={setAlternante("android")} />
       </Head>
       <Header />
       {!!item ? (
