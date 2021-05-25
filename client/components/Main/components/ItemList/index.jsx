@@ -5,11 +5,11 @@ const ItemList = ({ items }) => {
   return (
     <div>
       {items && (
-        <>
+        <ul>
           {items.map((element, idx) => (
             <Item key={element.id} item={element} />
           ))}
-        </>
+        </ul>
       )}
     </div>
   );

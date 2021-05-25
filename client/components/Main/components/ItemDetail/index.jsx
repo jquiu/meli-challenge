@@ -10,17 +10,19 @@ import {
   ItemDetailTitle,
 } from "../../style";
 import Image from "next/image";
+import ItemSchema from "@components/Schema/components/ItemSchema/index";
 import ItemPrice from "../ItemPrice/index";
 
 const ItemDetail = ({ id, data }) => {
   const { item, categories } = data;
   return (
     <ResultsWrapper>
+      <ItemSchema item={item}/>
       <Breadcrumbs categories={categories} />
       <ItemDetailWrapper>
         <ItemDetailContainerInfo>
           <figure>
-            <img src={item.picture} />
+            <Image src={item.picture} alt={item.title} width={680} height={400} layout="intrinsic"/>
           </figure>
           <div>
             <ItemDetailSubtitle>

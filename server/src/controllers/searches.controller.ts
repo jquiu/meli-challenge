@@ -11,11 +11,18 @@ class SearchController {
   };
   public searchByQueryParams = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     axios
-      .get(`https://api.mercadolibre.com/sites/MLA/search?q='${req.query.q}`)
+      .get(`https://api.mercadolibre.com/sites/MLA/search?q='${req.query.q}&offset=0&limit=4`)
       .then(response => {
         const { data } = response;
         const categories =
-          data.filters.length && data.filters[0].values ? data.filters[0].values[0].path_from_root.map(category => category.name) : [];
+          data.filters.length && data.filters[0].values
+            ? data.filters[0].values[0].path_from_root
+            : [
+                {
+                  id: '',
+                  name: 'Sin Categoría',
+                },
+              ];
         const items = data.results
           .map(item => {
             const [, , , url] = item.thumbnail.split('/');
@@ -34,8 +41,7 @@ class SearchController {
               free_shipping: item.shipping.free_shipping,
               address: item.address,
             };
-          })
-          .slice(0, 4);
+          });
         res.send({ author: this.author, categories: categories, items: items });
       })
       .catch(error => {
@@ -61,13 +67,11 @@ class SearchController {
           const categories = await fetchCategories.json();
           const { path_from_root } = categories;
           try {
-            path_from_root.forEach(category => {
-              categoryList.push(category.name);
-            });
+            categoryList = path_from_root;
           } catch {
             categoryList.push('Sin Categoría');
           }
-
+          const [, , , url] = itemData.thumbnail.split('/');
           res.send({
             author: this.author,
             item: {
@@ -80,12 +84,13 @@ class SearchController {
                 symbol: currency.symbol,
               },
               category_id: itemData.category_id,
-              picture: itemData.pictures[0].url || itemData.thumbnail,
+              picture: url,
               condition: itemData.condition,
               free_shipping: itemData.shipping.free_shipping,
               sold_quantity: itemData.sold_quantity,
               description: descriptionData.plain_text,
               address: item.address,
+              permalink: item.permalink,
             },
             categories: categoryList,
           });

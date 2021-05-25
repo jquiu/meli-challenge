@@ -15,7 +15,7 @@ export const ResultsContainer = styled.section`
   border-radius: 0.25rem;
 `;
 
-export const ItemWrapper = styled.div`
+export const ItemWrapper = styled.li`
   margin: 1rem;
   display: flex;
   grid-gap: 1rem;

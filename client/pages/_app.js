@@ -11,12 +11,12 @@ function MyApp({ Component, pageProps }) {
         <meta
           name="description"
           content="La comunidad de compra y venta online más grande de América Latina."
-          data-head-react="true"
+          
         />
         <link
           rel="canonical"
           href="https://www.mercadolibre.com.co"
-          data-head-react="true"
+          
         />
       </Head>
       <Component {...pageProps} />

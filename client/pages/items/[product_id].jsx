@@ -7,10 +7,6 @@ import Head from "next/head";
 function ProductItem({ product, data }) {
   const { item } = data;
 
-  const setCanonical = () => {
-    return `https://articulo.mercadolibre.com.co/MCO-565045738-termo-acero-inoxidable-1100-ml-mantiene-calorfrio-klatter-_JM`;
-  };
-
   const setAlternante = (platform) => {
     const link =
       platform === "android"
@@ -26,7 +22,7 @@ function ProductItem({ product, data }) {
         <meta property="og:description" content={item.description} />
         <meta property="og:title" content={item.title} />
         <meta property="og:image" content={item.picture} />
-        <link rel="canonical" href={setCanonical()} />
+        <link rel="canonical" href={item.permalink} />
         <link rel="alternate" href={setAlternante("ios")} />
         <link rel="alternate" href={setAlternante("android")} />
       </Head>

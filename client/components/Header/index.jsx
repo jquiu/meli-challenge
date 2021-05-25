@@ -11,8 +11,8 @@ const Header = () => {
           <img
             src={"/logo__small@2x.png"}
             alt="logo"
-            width={180}
-            height={180}
+            width='88'
+            height='64'
           />
         </Link>
         <SearchBar />

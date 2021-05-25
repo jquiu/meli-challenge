@@ -1,13 +1,12 @@
 import Schema from "@components/Schema/index";
 
-
 const BreadcrumbSchema = ({ categories }) => {
   const itemListElement = categories.map((item, idx) => {
     return {
       "@type": "ListItem",
       position: idx,
-      name: item,
-      item: `/${item}`,
+      name: item.name,
+      item: `https://api.mercadolibre.com/categories/${item.id}`,
     };
   });
   const buildBreadcrumbSchema = (item) => {
@@ -17,7 +16,7 @@ const BreadcrumbSchema = ({ categories }) => {
       itemListElement: itemListElement,
     };
   };
-  return <Schema schema={buildBreadcrumbSchema()}/>;
+  return <Schema schema={buildBreadcrumbSchema()} />;
 };
 
 export default BreadcrumbSchema;

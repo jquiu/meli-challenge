@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { SearchFrom, SearchInput, SearchLink } from "../../style";
+import SearchSchema from "@components/Schema/components/SearchSchema/index";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
+  const [windows, setWindows] = useState("");
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
@@ -18,11 +20,13 @@ const SearchBar = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get("search");
-    setSearch(myParam);
+    setWindows(window.location);
+    myParam ? setSearch(myParam) : setSearch("");
   }, []);
 
   return (
     <SearchFrom>
+      {!!windows ? <SearchSchema query={search} window={windows} /> : null}
       <SearchInput
         type="search"
         placeholder="Nunca dejes de buscar"
@@ -33,6 +37,7 @@ const SearchBar = () => {
         autoCapitalize="none"
         autoComplete="off"
         autoCorrect="off"
+        role="search"
         id="search"
         name="search"
         arial-label="search"

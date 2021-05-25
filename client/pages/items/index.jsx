@@ -32,18 +32,18 @@ function Search({ query, data }) {
         <meta
           name="description"
           content={metaDescription()}
-          data-head-react="true"
+          
         />
-        <link rel="canonical" href={setCanonical()} data-head-react="true" />
+        <link rel="canonical" href={setCanonical()}  />
         <link
           rel="alternate"
           href={setAlternante("ios")}
-          data-head-react="true"
+          
         />
         <link
           rel="alternate"
           href={setAlternante("android")}
-          data-head-react="true"
+          
         />
       </Head>
       <Header />

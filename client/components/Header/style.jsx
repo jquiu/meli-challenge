@@ -63,7 +63,7 @@ export const SearchLink = styled.a`
   }
 `;
 
-export const BreadCrumbContainer = styled.div`
+export const BreadCrumbContainer = styled.nav`
   padding: 16px 0;
 `;
 
