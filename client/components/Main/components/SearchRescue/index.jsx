@@ -6,7 +6,7 @@ import {
 const SearchRescue = () => {
   return (
     <SearchRescueContaiuner>
-      <img src="/not_found.svg" />
+      <img src="/not_found.svg" alt="Search Rescue"/>
       <SearchRescueInfo>
         <h3>No hay publicaciones que coincidan con tu búsqueda.</h3>
         <ul>

@@ -64,7 +64,7 @@ export const ItemDetailCondition = styled.div`
   color: ${COLOR["dark-gray"]};
 `;
 
-export const ItemDetailContainerDescription = styled.div`
+export const ItemDetailContainerDescription = styled.article`
   width: 680px;
   h2 {
     margin-bottom: 1rem;

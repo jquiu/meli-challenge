@@ -13,7 +13,7 @@ import Image from "next/image";
 import ItemSchema from "@components/Schema/components/ItemSchema/index";
 import ItemPrice from "../ItemPrice/index";
 
-const ItemDetail = ({ id, data }) => {
+const ItemDetail = ({ data }) => {
   const { item, categories } = data;
   return (
     <ResultsWrapper>
@@ -22,7 +22,7 @@ const ItemDetail = ({ id, data }) => {
       <ItemDetailWrapper>
         <ItemDetailContainerInfo>
           <figure>
-            <Image src={item.picture} alt={item.title} width={680} height={400} layout="intrinsic"/>
+            <Image src={item.picture} alt={item.title} width={680} height={400} layout="intrinsic" data-testid="item-image"/>
           </figure>
           <div>
             <ItemDetailSubtitle>
@@ -37,7 +37,7 @@ const ItemDetail = ({ id, data }) => {
         </ItemDetailContainerInfo>
         <ItemDetailContainerDescription>
           <h2>Descripción del producto</h2>
-          <p>{item.description}</p>
+          <p data-testid="product-description">{item.description}</p>
         </ItemDetailContainerDescription>
       </ItemDetailWrapper>
     </ResultsWrapper>

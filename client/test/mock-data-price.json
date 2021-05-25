@@ -1,0 +1,8 @@
+{
+  "price": {
+    "currency": "ARS",
+    "amount": 95600,
+    "decimal": 2,
+    "symbol": "$"
+  }
+}

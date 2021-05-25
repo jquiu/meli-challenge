@@ -40,12 +40,11 @@ const SearchBar = () => {
         role="search"
         id="search"
         name="search"
-        arial-label="search"
       />
 
       <Link href={`/items?search=${search}`}>
-        <SearchLink>
-          <img src="/ic_Search@2x.png" alt="search button" />
+        <SearchLink role="button" >
+         <img src="/ic_Search@2x.png" alt="search button" arial-label="search button"/>
         </SearchLink>
       </Link>
     </SearchFrom>

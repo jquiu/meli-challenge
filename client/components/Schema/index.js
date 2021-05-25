@@ -1,12 +1,12 @@
 
 const Schema = ({ schema }) => {
   return (
-    <article>
+    <div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-    </article>
+    </div>
   );
 };
 
