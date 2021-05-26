@@ -28,6 +28,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/items.js"
+    ],
+    "/items/[product_id]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/items/[product_id].js"
     ]
   },
   "ampFirstPages": []

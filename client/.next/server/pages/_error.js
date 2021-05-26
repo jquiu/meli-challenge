@@ -12,31 +12,25 @@ exports.id = "pages/_error";
 exports.ids = ["pages/_error"];
 exports.modules = {
 
-/***/ "./pages/_error.js":
-/*!*************************!*\
-  !*** ./pages/_error.js ***!
-  \*************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* reexport default from dynamic */ next_error__WEBPACK_IMPORTED_MODULE_0___default.a; }
-/* harmony export */ });
-/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/error */ "next/error");
-/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_error__WEBPACK_IMPORTED_MODULE_0__);
-
-
-/***/ }),
-
-/***/ "next/error":
-/*!*****************************!*\
-  !*** external "next/error" ***!
-  \*****************************/
+/***/ "../next-server/lib/head":
+/*!****************************************************!*\
+  !*** external "next/dist/next-server/lib/head.js" ***!
+  \****************************************************/
 /***/ (function(module) {
 
 "use strict";
-module.exports = require("next/error");;
+module.exports = require("next/dist/next-server/lib/head.js");;
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("react");;
 
 /***/ })
 
@@ -47,7 +41,7 @@ module.exports = require("next/error");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-var __webpack_exports__ = (__webpack_exec__("./pages/_error.js"));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendors-node_modules_next_dist_pages__error_js"], function() { return __webpack_exec__("./node_modules/next/dist/pages/_error.js"); });
 module.exports = __webpack_exports__;
 
 })();
