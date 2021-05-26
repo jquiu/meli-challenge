@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { SearchFrom, SearchInput, SearchLink } from "../../style";
+import Router from 'next/router'
 import SearchSchema from "@components/Schema/components/SearchSchema/index";
 
 const SearchBar = () => {
@@ -9,14 +10,16 @@ const SearchBar = () => {
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
+
   const handleEnter = (event) => {
     const { key } = event;
     const { value } = event.target;
     if (key === "Enter") {
-      window.location.replace(`/items?search=${value}`);
+      Router.push({ pathname: '/items', query: { search: value } })
       setSearch(value);
     }
   };
+  
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get("search");

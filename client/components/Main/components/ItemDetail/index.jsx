@@ -12,21 +12,31 @@ import {
 import Image from "next/image";
 import ItemSchema from "@components/Schema/components/ItemSchema/index";
 import ItemPrice from "../ItemPrice/index";
+import { CONDITIONS } from "../../../../utils/constants";
 
 const ItemDetail = ({ data }) => {
   const { item, categories } = data;
+  const condition = CONDITIONS[item.condition]
+  
   return (
     <ResultsWrapper>
-      <ItemSchema item={item}/>
-      <Breadcrumbs categories={categories} />
+      <ItemSchema item={item} />
+     {categories && <Breadcrumbs categories={categories} />}
       <ItemDetailWrapper>
         <ItemDetailContainerInfo>
           <figure>
-            <Image src={item.picture} alt={item.title} width={680} height={400} layout="intrinsic" data-testid="item-image"/>
+            <Image
+              src={item.picture}
+              alt={item.title}
+              width={680}
+              height={400}
+              layout="intrinsic"
+              data-testid="item-image"
+            />
           </figure>
           <div>
             <ItemDetailSubtitle>
-              {item.condition} - {item.sold_quantity} vendidios
+              {condition} - {item.sold_quantity} vendidios
             </ItemDetailSubtitle>
             <ItemDetailTitle>{item.title}</ItemDetailTitle>
             <ItemDetailPrice>

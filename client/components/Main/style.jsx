@@ -1,13 +1,16 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Link from "next/link";
 
-import { COLOR } from "../../styles/styles";
+import { COLOR, MEDIA_BREAKPOINTS } from "../../styles/styles";
 
 export const ResultsWrapper = styled.div`
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 1.5rem 0.5rem;
+  padding: 0;
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    padding: 0 1.5rem 0.5rem;
+  }
 `;
 
 export const ResultsContainer = styled.section`
@@ -20,6 +23,14 @@ export const ItemWrapper = styled.li`
   display: flex;
   grid-gap: 1rem;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    justify-content: unset;
+    align-items: unset;
+    padding-bottom: 10px;
+  }
   border-bottom: 1px solid ${COLOR["gray"]};
   & :last-child {
     border: none;
@@ -27,34 +38,43 @@ export const ItemWrapper = styled.li`
 `;
 
 export const ItemDetailWrapper = styled.div`
-  display: grid;
-  grid-auto-rows: auto;
+  display: flex;
+  flex-direction: column;
   grid-gap: 1rem;
   padding: 2rem;
   margin: 1rem 0;
   background-color: ${COLOR["white"]};
   border-radius: 0.5rem;
   box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    display: grid;
+    grid-auto-rows: auto;
+  }
 `;
 
 export const ItemDetailContainerInfo = styled.div`
-  display: grid;
-  grid-template-columns: 680px auto;
-  grid-column-gap: 1rem;
-  -webkit-column-gap: 1rem;
+  display: flex;
+  flex-direction: column;
   column-gap: 1rem;
-  figure {
-    border-radius: 0.25rem;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(680px * 0.8);
-    max-height: 680px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    display: grid;
+    grid-template-columns: 680px auto;
+    grid-column-gap: 1rem;
+    -webkit-column-gap: 1rem;
+    figure {
+      border-radius: 0.25rem;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(680px * 0.8);
+      max-height: 680px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
   }
 `;
@@ -65,7 +85,7 @@ export const ItemDetailCondition = styled.div`
 `;
 
 export const ItemDetailContainerDescription = styled.article`
-  width: 680px;
+  width: 100%;
   h2 {
     margin-bottom: 1rem;
     font-size: 1.75rem;
@@ -77,21 +97,30 @@ export const ItemDetailContainerDescription = styled.article`
     font-style: normal;
     font-weight: 200;
   }
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    width: 680px;
+  }
 `;
 
 export const ItemInfo = styled.div`
   flex-grow: 2;
-  width: 50%;
+  width: 70%;
   margin-top: 30px;
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    width: 50%;
+  }
 `;
 
 export const ItemSpanPrice = styled.p`
   display: inline-block;
   font-size: 1.5rem;
   margin-right: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   span {
     margin-right: 6px;
+  }
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    margin-bottom: 2rem;
   }
 `;
 
@@ -138,10 +167,14 @@ export const ItemCity = styled.div`
 
 export const ItemTitle = styled.a`
   color: ${COLOR["dark"]};
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 1.3;
+  font-size: 1rem;
+  line-height: 1;
   cursor: pointer;
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.3;
+  }
 `;
 
 export const ItemDetailTitle = styled.h1`

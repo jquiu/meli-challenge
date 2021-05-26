@@ -1,11 +1,11 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
-import { COLOR } from "../../styles/styles";
+import { COLOR, MEDIA_BREAKPOINTS } from "../../styles/styles";
 
 export const HeaderContainer = styled.div`
   padding: 0 1rem;
   background-color: ${COLOR["yellow"]};
-  height: 50px;
+  height: 60px;
   display: flex;
 
   justify-content: center;
@@ -42,7 +42,10 @@ export const SearchInput = styled.input`
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
   height: 39px;
   padding: 7px 60px 9px 15px;
-  margin-left: 30px;
+  margin-left: 15px;
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    margin-left: 30px;
+  }
   & ::placeholder {
     color: ${COLOR["light-gray"]};
     font-weight: 200;
@@ -64,7 +67,10 @@ export const SearchLink = styled.a`
 `;
 
 export const BreadCrumbContainer = styled.nav`
-  padding: 16px 0;
+  padding: 20px;
+  @media ${MEDIA_BREAKPOINTS.tablet} {
+    padding: 16px 0;
+  }
 `;
 
 export const BreadCrumbList = styled.ul`
