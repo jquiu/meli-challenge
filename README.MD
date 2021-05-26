@@ -37,6 +37,9 @@ npm install
 npm run dev
 http://localhost:9000/
 ```
+#PERFORMANCE
+
+![alt text](https://github.com/jquiu/meli-challenge/blob/main/lighthouse.png?raw=true)
 
 ## License
 
