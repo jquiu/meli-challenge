@@ -1,12 +1,11 @@
-# MELI CHALLENGE
+## MELI CHALLENGE
+## :clipboard: ABOUT
 
 According to the challenge, I made the decision to do it with NextJs (React framework), in order to take advantage of the rendering on the server-side. From this way, the weight of the processing and creation of the pages would be on it. With this technique, we also think of SEO optimization. 
 About component styles, I chose to use the styled-components library as it creates dynamic and useful components.
-## :clipboard: ABOUT
-
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
 ## :rocket: BUILD
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 # I use a number of open source libraries to work properly:
 - [Nextjs](https://nextjs.org/) as javascript framework build in react.
 - [Express](https://expressjs.com/es/) as a Node framework.
@@ -22,13 +21,13 @@ About component styles, I chose to use the styled-components library as it creat
 - 1. Node >= 6
 - 2. Express
 # client's route
-search box /
-search results /items?search =
-product detail items/:id
+- search box /
+- search results /items?search =
+- product detail items/:id
 
 # server's route
-search /api/items?q=
-detail api/items/:id
+- search /api/items?q=
+- detail api/items/:id
 
 
 ## :gear: USAGE
